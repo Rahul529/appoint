@@ -1,0 +1,36 @@
+<div class="row" ng-controller="bankDetailsController">
+<div class="col-md-5 col-lg-6 col-sm-6 col-xs-12">
+<br>
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h5>New service</h5>
+</div>
+
+<div class="panel-body">
+<form class ="">
+					<!-- <input id="orgname" name="name" class="form-control input-area" ng-model="employee_name" placeholder="employee Name" required tabindex="1" type="text" >  -->
+					 
+					<input id="orgname" name="name" class="form-control input-area" ng-model="service_name" placeholder="user Name" required tabindex="1" type="text" >      
+					<input id="orgname" name="name" class="form-control input-area" ng-model="password" placeholder="password" required tabindex="1" type="password" >
+					                           
+					<input id="branch" class="form-control input-area" name="email" ng-model= "branch_name" placeholder="email" required type="email">
+							
+                    <input class="btn btn-danger input-area" type="submit" value="Create User" onclick="vas()" style="width:100%">
+                 	
+</form>
+</div>
+</div>
+</div>
+<div class="col-md-5 col-lg-6 col-sm-6 col-xs-12">
+<br>
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h5>Employees</h5>
+
+</div>
+<div class="panel-body">
+<p ng-repeat="x in staff1">{[x.username]}</p>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,42 @@
+<div class="col-md-6 col-xs-12" ng-controller="tenantlistController">
+	<nav class="navbar navbar-fixed">
+		<ul style="display: inline-block;">
+			
+			
+		</ul>
+	</nav>
+	<h4>Please choose where you want to Go</h4>
+		Choose the bank 
+	
+	
+	<!-- <p >{[username]}</p> -->
+  	<li class="list-group-item" >
+  	<button type="button" ng-repeat = "tenant in tenants" class="list-group-item" ng-model="selectedTenant" ng-click="searchbranchs(tenant.org_name)">{[tenant.org_name]}</button>
+  	</li>
+
+	<!-- <li class="list-group-item" ng-repeat = t in [1,2,3,]>{[tenan t.org_name]}</li> -->
+ 	
+	
+	Please Choose the Branch
+	<!-- <ul class="list-group"> -->
+  	<li class="list-group-item">
+  	<button type="button" ng-repeat = "branch in branches" class="list-group-item" ng-model="selectedbranch" ng-click="searchServices(branch)">{[branch]}</button>
+  	</li>
+
+  	Please choose The services
+  	<li class="list-group-item" >
+  	<!-- <select ng-repeat = "service in services_list" class="list-group-item" ng-model="selectedService" ng-click="">{[service]}</select> -->
+  	<select class="form-control input-area" ng-model="selectedService" ng-options="service for service in services_list"></select>
+  	</li>
+	<!-- <li class="list-group-item" ng-repeat = t in [1,2,3,]>{[tenan t.org_name]}</li> -->
+ 	
+	<!-- </ul> -->
+	<!-- <ul class="list-group"> -->
+  	
+  		<button class="btn btn-primary" style="width: 100%" ng-click="bookSlot(selectedService)">Create</button>
+  	
+
+	<!-- <li class="list-group-item" ng-repeat = t in [1,2,3,]>{[tenan t.org_name]}</li> -->
+ 	
+	<!-- </ul> -->
+</div>

@@ -1,0 +1,39 @@
+<div class="row">
+<div class="col-md-5 col-lg-6 col-sm-6 col-xs-12">
+<br>
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h5>New service</h5>
+</div>
+
+<div class="panel-body" ng-controller="bankDetailsController">
+<form class ="">
+					<input id="orgname" name="name" class="form-control input-area" ng-model="counter_name" placeholder="Counter Name" required  type="text" > 
+					                         
+					<select  class="form-control input-area"ng-model="selectedService" ng-options="service for service in services">
+					</select>
+					<select class="form-control input-area" ng-model="selectedStaff" ng-options="staff.username for staff in staff1">
+					</select>
+					<!-- <input id="branch" class="form-control input-area" name="email" ng-model= "counter.staff" placeholder="Handle by or Nmae of staff" required type="text">
+
+					<input id="branch" class="form-control input-area" name="email" ng-model= "counter.service" placeholder="Handle Service" required type="text">
+					 -->		
+                    <input class="btn btn-danger input-area" type="submit" value="Add Counter" ng-click="addCounter1()" style="width:100%">
+                 	
+</form>
+</div>
+</div>
+</div>
+<div class="col-md-5 col-lg-6 col-sm-6 col-xs-12">
+<br>
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h5>Counters</h5>
+
+</div>
+<div class="panel-body">
+<p ng-repeat="x in staff1">{[x.username]}</p>
+</div>
+</div>
+</div>
+</div>

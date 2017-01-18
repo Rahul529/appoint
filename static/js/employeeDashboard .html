@@ -1,0 +1,148 @@
+{% load staticfiles %}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="{{STATIC_URL}}/static/js/jquery-1.12.3.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}/static/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}/static/app.css"/>
+    <link rel="stylesheet" type="text/javascript" href="{{STATIC_URL}}/static/js/angular.js">
+    <script type="text/javascript" src="{{STATIC_URL}}/static/js/bootstrap.min.js"></script>
+    <link href={{STATIC_URL}}/static/js>
+  		<script type="text/javascript" src="{{STATIC_URL}}/static/js/angular.js"></script>
+		   <script type="text/javascript" src="{{STATIC_URL}}/static/js/angular-cookies.js"></script>
+      <script type="text/javascript" src="{{STATIC_URL}}/static/js/angular-ui-router.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}/static/js/angular-route.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}/static/js/ui-bootstrap-tpls-1.3.2.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}/static/js/employee.js"></script>
+
+</head>
+<body ng-app="bmyapp1">
+<div class="" ng-controller="bankDetailsController">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="wrapper">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="https://getbootstrap.com/examples/dashboard/#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://getbootstrap.com/examples/dashboard/#">Dashboard</a></li>
+            <li><a href="">{{user.username}}</a></li>
+            <!-- <li><a href="">Add Services</a></li>
+            <li><a href="https://getbootstrap.com/examples/dashboard/#">Manage</a></li>
+            <li><a href="https://getbootstrap.com/examples/dashboard/#">Profile</a></li>
+            <li><a href="https://getbootstrap.com/examples/dashboard/#">Help</a></li> -->
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+    </div>
+	<div class="container-fluid " style="padding-top:55px;">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 col-lg-2 sidebar" style="background-color:#0000">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="https://getbootstrap.com/examples/dashboard/#">Overview <span class="sr-only">{[current]}</span></a></li>
+            <li><a href="/examples/dashboard/#">Services</a></li>
+            <li><a href="/examples/dashboard/#">Analytics</a></li>
+            <!-- <li><a href="/examples/dashboard/#">Staff</a></li> -->
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="/examples/dashboard/">Last Requests</a></li>
+            <li><a href="/examples/dashboard/">Messages</a></li>
+            <li><a href="/examples/dashboard/">Client Ratings</a></li>
+            <li><a href="/examples/dashboard/">FeedBack</a></li>
+            <li><a href="/examples/dashboard/">More navigation</a></li>
+          </ul>
+         
+        </div>
+        <!-- <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 col-lg-offset-2 col-lg-8 main"> -->
+        <div class="col-sm-9  col-md-10   col-lg-8 main" ng-controller="bankDetailsController"> 
+        <div class="inline-block">
+        <div id="tenant_org_name" ng-model="orgname">{{tenant.org_name}}</div>
+        <div id="tenant_branch_name" ng-model = "branch">{{tenant.branch_name}}</div>
+        <div id="tenant_counter">{{user.counter}}</div>
+        <h4>Bank name:{[tenant.org_name]}</h4><h4>Bank Branch Name:{[tenant.branch_name]}</h4>
+         </div>
+
+          
+          
+
+         <!--  <ul class="nav nav-pills">
+  			<li role="presentation" class="active" ><a ui-sref="newUser">Home</a></li>
+  			<li role="presentation" class=""><a ui-sref="service">Add Services</a></li>
+  			<li role="presentation" class=""><a ui-sref="addUser">Add Users</a></li>
+  			<li role="presentation" class=""><a ui-sref="counters">Add Counters</a></li> -->
+  			<!-- <li role="presentation" class=""><a ui-sref="login">Manage Users</a></li> -->
+  			<!-- <li role="presentation" class=""><a ui-sref="login">Manage Services</a></li> -->
+		<!-- </ul> -->
+		<div ui-view="">
+      <h1 class="page-header">Dashboard</h1>
+			<!-- <ng-include src="static/js/bankservices.html"> -->
+      <div class="" ng-controller="CounterController">
+        <h5>{[counter]}</h5>
+
+        <div class="col-md-12 col-xs-12" >
+       
+            <div class="col-md-8 col-xs-12 text-center">
+                  
+              <p>Requests:{[count-index]}<p>
+              <!-- {[current]} -->
+            <div class="panel panel-default">
+                    <div class="panel-body" ng-model="current">
+                      
+                      
+                      <p ng-bind="current.processed"></p>
+                                          <!-- <p>{[current]}</p> -->
+                                          <p ng-bind="current.processed"></p>
+                                          <p ng-bind="current.full_name"></p>
+                                          <p ng-bind="current.service_name"></p>
+                                          <p ng-bind="current.email"></p>
+                                          
+                      <!-- </tr> -->
+                    <div class="inline">
+                    <button type="button" class="btn btn-success" ng-click="process_complete()">Accept</button>
+                    <button type="button" class="btn btn-danger">Reject</button>
+                    </div>  
+                    </div>
+
+                  </div>
+            </div>
+              <div class="col-md-4 col-xs-12 text-center">
+
+              <div class = "" ng-repeat = "x in requests">
+                <div>
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      <p>{[x.$index]}</p>
+                      <p>{[x.process]}</p>
+                      <p>{[x.full_name]} </p>
+                      <p>{[x.email]}</p>
+                      <p>{[x.service_name]}</p>
+                      <!-- </tr> -->
+                      
+                    </div>
+
+                  </div>
+              </div>  
+                  
+              </div>
+            </div>
+
+       <!-- <p>{[requests]}</p> -->
+       <!-- <h5>{[tenant]}</h5> -->
+      </div>
+		</div>
+
+        </div>
+        </div>
+      </div>
+
+  </body>
+</html>

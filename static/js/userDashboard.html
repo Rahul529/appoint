@@ -1,0 +1,163 @@
+{% load staticfiles %}
+{% csrf_token %} 
+<html>
+		<head>
+    <meta name="viewport" content="width=device-width">
+
+		<!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+
+		<!-- jQuery library -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> -->
+
+		<!-- Latest compiled JavaScript -->
+		<!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+    <script type="text/javascript" src="{{STATIC_URL}}/static/js/jquery-1.12.3.js"></script>
+   <!--  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.13.1/lodash.min.js."></script> -->
+
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}/static/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}/static/app.css"/>
+    <link rel="stylesheet" type="text/javascript" href="{{STATIC_URL}}/static/js/angular.js">
+    <script type="text/javascript" src="{{STATIC_URL}}/static/js/bootstrap.min.js"></script>
+    <link href={{STATIC_URL}}/static/js>
+  		<script type="text/javascript" src="{{STATIC_URL}}/static/js/angular.js"></script>
+		   <script type="text/javascript" src="{{STATIC_URL}}/static/js/angular-cookies.js"></script>
+      <script type="text/javascript" src="{{STATIC_URL}}/static/js/angular-ui-router.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}/static/js/angular-route.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}/static/js/ui-bootstrap-tpls-1.3.2.js"></script>
+		<script type="text/javascript" src="{{STATIC_URL}}/static/js/userapp.js"></script>
+        <script type="text/javascript" src="{{STATIC_URL}}/static/js/moment.js"></script>
+
+
+    <!-- <script type="text/javascript" src={{STATIC_URL}}/static/js/pages/></script> -->
+
+		</head>
+<nav class="navbar navbar-inverse" style="background-color:#2F265F">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Appoint</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class=""><a ui-sref='home'>Home</a></li>
+        <li><a ui-sref="signout">Sign out</a></li>
+        
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <!-- <li ><a ui-sref="signup">Sign Up</a></li> -->
+        <!-- <li><a ui-sref="usersignup">Signup</a></li>
+
+        <li><a ui-sref ="login" >Login11</a></li> -->
+      <li id = "username" class ="pull-right" >{{user.username}}</li>
+		<li id ="userEmail" class="pull-right" >{{user.email}}</li>
+      </ul>
+    </div>
+
+  </div>
+</nav>		
+
+
+
+<body ng-app="userApp" >
+
+<div class="container">
+
+
+<div class="row" ng-controller="tenantlistController">
+<div class="row">
+<div style="width:100%;background-color:cyan;">
+<!-- <div id = "username" class ="pull-right" >{{user.username}}</div> -->
+<!-- <div id ="userEmail" class="pull-right" >{{user.email}}</div> -->
+</div>
+</div>
+<div class="row" style="display:inline-flex">
+<div class="col-md-2 col-xs-4 col-lg-4"><a href="">Home</a></div>
+<div class="col-md-2 col-xs-4 col-lg-4"><a ui-sref="newRequest">New</a></div>
+<div class="col-md-2 col-xs-4 col-lg-4"><a>Pending</a></div>
+<div class="col-md-2 col-xs-4 col-lg-4"><a>Completed</a></div>
+<!-- <div class="">{[userEmail]}</div> -->
+</div>
+<div ui-view="">
+<!-- <div class="col-md-6 col-xs-12" >
+	<nav class="navbar navbar-fixed">
+		<ul style="display: inline-block;">
+			
+			
+		</ul>
+	</nav>
+	<h4>Please choose where you want to Go</h4>
+		Choose the bank 
+	
+	
+	<p >{[username]}</p>
+  	<li class="list-group-item" >
+  	<button type="button" ng-repeat = "tenant in tenants" class="list-group-item" ng-model="selectedTenant" ng-click="searchbranchs(tenant.org_name)">{[tenant.org_name]}</button>
+  	</li>
+ -->
+	<!-- <li class="list-group-item" ng-repeat = t in [1,2,3,]>{[tenan t.org_name]}</li> -->
+ 	
+	
+	<!-- Please Choose the Branch -->
+	<!-- <ul class="list-group"> -->
+<!--   	<li class="list-group-item">
+  	<button type="button" ng-repeat = "branch in branches" class="list-group-item" ng-model="selectedbranch" ng-click="searchServices(branch)">{[branch]}</button>
+  	</li>
+
+  	Please choose The services
+  	<li class="list-group-item" > -->
+  	<!-- <select ng-repeat = "service in services_list" class="list-group-item" ng-model="selectedService" ng-click="">{[service]}</select> -->
+  	<!-- <select class="form-control input-area" ng-model="selectedService" ng-options="service for service in services_list"></select> -->
+  	<!-- </li> -->
+	<!-- <li class="list-group-item" ng-repeat = t in [1,2,3,]>{[tenan t.org_name]}</li> -->
+ 	
+	<!-- </ul> -->
+	<!-- <ul class="list-group"> -->
+  	
+  		<!-- <button class="btn btn-primary" style="width: 100%" ng-click="bookSlot(selectedService)">Create</button> -->
+  	
+
+	<!-- <li class="list-group-item" ng-repeat = t in [1,2,3,]>{[tenan t.org_name]}</li> -->
+ 	
+	<!-- </ul> -->
+<!-- </div> -->
+<div class="col-md-6 col-xs-12" ng-controller="tenantlistController">
+your last Requests
+	<li class="list-group-item" ng-repeat="x  in requests">{[x]}</li>
+	<br><br>
+	<div class = "panel panel-success" ng-model="requestHome">
+   		<div class = "panel-heading">
+      		<h3 class = "panel-title">Request Id :{[requestHome.request_id]}</h3>
+   		</div>
+   
+   <!-- <div class = "panel-body"> -->
+   <div class="panel-body" >
+                      
+                      <p>{[counter |formatTimer]}</p>
+                      <p ng-bind="requestHome.processed"></p>
+                                          <!-- <p>{[current]}</p> -->
+
+                         <p ng-bind="requestHome.processed"></p>
+                                          <p ng-bind="requestHome.full_name"></p>
+                                          <p ng-bind="requestHome.service_name"></p>
+                                          <p ng-bind="requestHome.email"></p>
+                                          <div id="Endtime">{[requestHome.timep]}</div>
+                                          
+                      <!-- </tr> -->
+                    <div class="inline">
+                    <button type="button" class="btn btn-success" ng-click="">Cancel</button>
+                    <!-- <button type="button" class="btn btn-danger">Later</button> -->
+                    </div>  
+    </div>
+     
+   </div>
+</div>
+</div>	
+</div>
+</div>
+</div>
+</body>

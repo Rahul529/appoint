@@ -1,0 +1,89 @@
+{% load staticfiles %}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="{{STATIC_URL}}/static/js/jquery-1.12.3.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}/static/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}/static/app.css"/>
+    <link rel="stylesheet" type="text/javascript" href="{{STATIC_URL}}/static/js/angular.js">
+    <script type="text/javascript" src="{{STATIC_URL}}/static/js/bootstrap.min.js"></script>
+    <link href={{STATIC_URL}}/static/js>
+  		<script type="text/javascript" src="{{STATIC_URL}}/static/js/angular.js"></script>
+		   <script type="text/javascript" src="{{STATIC_URL}}/static/js/angular-cookies.js"></script>
+      <script type="text/javascript" src="{{STATIC_URL}}/static/js/angular-ui-router.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}/static/js/angular-route.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}/static/js/ui-bootstrap-tpls-1.3.2.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}/static/js/bankapp.js"></script>
+
+</head>
+<body ng-app="bmyapp1">
+<div class="" ng-controller="bankDetailsController">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="wrapper">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="https://getbootstrap.com/examples/dashboard/#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://getbootstrap.com/examples/dashboard/#">Dashboard</a></li>
+            <li><a href="">Add Services</a></li>
+            <li><a href="https://getbootstrap.com/examples/dashboard/#">Manage</a></li>
+            <li><a href="https://getbootstrap.com/examples/dashboard/#">Profile</a></li>
+            <li><a href="https://getbootstrap.com/examples/dashboard/#">Help</a></li>
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+    </div>
+	<div class="container-fluid " style="padding-top:55px;">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 col-lg-2 sidebar" style="background-color:#0000">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="https://getbootstrap.com/examples/dashboard/#">Overview <span class="sr-only">(current)</span></a></li>
+            <li><a href="/examples/dashboard/#">Services</a></li>
+            <li><a href="/examples/dashboard/#">Analytics</a></li>
+            <li><a href="/examples/dashboard/#">Staff</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="/examples/dashboard/">Last Requests</a></li>
+            <li><a href="/examples/dashboard/">Messages</a></li>
+            <li><a href="/examples/dashboard/">Client Ratings</a></li>
+            <li><a href="/examples/dashboard/">FeedBack</a></li>
+            <li><a href="/examples/dashboard/">More navigation</a></li>
+          </ul>
+         
+        </div>
+        <!-- <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 col-lg-offset-2 col-lg-8 main"> -->
+        <div class="col-sm-9  col-md-10   col-lg-8 main" ng-controller="bankDetailsController"> 
+        <div class="inline-block">
+        <h4>Bank name:{[tenant.org_name]}</h4><h4>Bank Branch Name:{[tenant.branch_name]}</h4>
+         </div>
+          <h1 class="page-header">Dashboard</h1>
+          
+
+          <ul class="nav nav-pills">
+  			<li role="presentation" class="active" ><a ui-sref="newUser">Home</a></li>
+  			<li role="presentation" class=""><a ui-sref="service">Add Services</a></li>
+  			<li role="presentation" class=""><a ui-sref="addUser">Add Users</a></li>
+  			<li role="presentation" class=""><a ui-sref="counters">Add Counters</a></li>
+  			<!-- <li role="presentation" class=""><a ui-sref="login">Manage Users</a></li> -->
+  			<!-- <li role="presentation" class=""><a ui-sref="login">Manage Services</a></li> -->
+		</ul>
+		<div ui-view="">
+			<!-- <ng-include src="static/js/bankservices.html"> -->
+		</div>
+
+        </div>
+        </div>
+      </div>
+
+  </body>
+</html>

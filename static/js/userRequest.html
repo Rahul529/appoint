@@ -1,0 +1,33 @@
+<div class="container row">
+	<div class="col-xs-12 col-md-6">
+	<h1></h1>
+	<div style="">
+		<div class="text-center"><h3>Hello Welcome to Appoint1</h3></div>
+        <!-- <form class= "form-control form-group"ng-submit="">
+            <input type="text" class="form-control" name="username" placeholder="Enter Name" ng-model="userRequest.full_name">
+                  <input type="text" class="form-control" name="email" placeholder="Enter Email" ng-model="userRequest.eamil" required="">
+                  
+                <input type="text" class="form-control" ng-model="userRequest.service_name"name= "purpose" placeholder="Purpose" required="">
+                <input type="text" class="form-control" ng-model="userRequest.bank_name"name="bankname" placeholder="Bank Name" required="">
+                <input type="text" class="form-control" name="branch" ng-model="userRequest.branch_name"placeholder="Branch" ng-required="true">
+                	<br><br>
+
+                <input type="button" class="btn btn-primary form-control" onclick="Submit" value="I am Coming" ng-click="">   	
+        </form> -->
+        <form id="contactform" ng-submit="createTenant()"> 
+    			<!-- <p class="contact"><label for="name">Name</label></p>  -->
+    			 <h3>Registration</h3>
+          <input id="name" name="name" class="pad form-control " ng-model="newtenant.tenant_name" placeholder="First and last name" required="" tabindex="1" type="text"> 
+    			 
+    			<!-- <p class="contact "><label for="email">Email</label></p>  -->
+    			<input id="email" class="pad form-control" name="email" ng-model= "newtenant.email" placeholder="example@domain.com" required="" type="email">
+          <input id="orgname" class="pad form-control" name="orgname" placeholder="Domain name" ng-model="newtenant.org_name"required="" type="text">
+          <input id="branch" class="pad form-control" name="branch" ng-model="newtenant.branch_name" placeholder="office branch" required="" type="text">
+          <br>
+          <trh>
+          <input class="button btn btn-primary pad" name="submit" id="submit" tabindex="5" value="Sign me up!" ng-click="createTenant()" type="submit"> 	 
+   </form > 
+        </div>
+	</div>
+
+</div>

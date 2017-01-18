@@ -1,0 +1,151 @@
+
+{% load staticfiles %}
+{% csrf_token %} 
+<html>
+		<head>
+    <meta name="viewport" content="width=device-width">
+
+		<!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+
+		<!-- jQuery library -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> -->
+
+		<!-- Latest compiled JavaScript -->
+		<!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+    <script type="text/javascript" src="{{STATIC_URL}}/static/js/jquery-1.12.3.js"></script>
+   <!--  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.13.1/lodash.min.js."></script> -->
+
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}/static/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}/static/app.css"/>
+    <link rel="stylesheet" type="text/javascript" href="{{STATIC_URL}}/static/js/angular.js">
+    <script type="text/javascript" src="{{STATIC_URL}}/static/js/bootstrap.min.js"></script>
+    <link href={{STATIC_URL}}/static/js>
+  		<script type="text/javascript" src="{{STATIC_URL}}/static/js/angular.js"></script>
+		   <script type="text/javascript" src="{{STATIC_URL}}/static/js/angular-cookies.js"></script>
+      <script type="text/javascript" src="{{STATIC_URL}}/static/js/angular-ui-router.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}/static/js/angular-route.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}/static/js/ui-bootstrap-tpls-1.3.2.js"></script>
+		<script type="text/javascript" src="{{STATIC_URL}}/static/js/app.js"></script>
+        <script type="text/javascript" src="{{STATIC_URL}}/static/js/moment.js"></script>
+
+
+    <!-- <script type="text/javascript" src={{STATIC_URL}}/static/js/pages/></script> -->
+
+		</head>
+
+	<nav class="navbar navbar-inverse" style="background-color:#2F265F">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"><strong style="font-size:30">@</strong><strong>SaaS</strong></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class=""><a ui-sref='home'>Home</a></li>
+        <li><a ui-sref="signup">Sign up</a></li>
+        <li><a ui-sref='user'>user</a></li>
+        <li><a ui-sref='work'>Working</a></li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <!-- <li ><a ui-sref="signup">Sign Up</a></li> -->
+        <li><a ui-sref="usersignup">Signup</a></li>
+        <li><a ui-sref ="login" >Login11</a></li>
+      </ul>
+    </div>
+
+  </div>
+</nav>		
+  <body ng-app="myapp1">
+      <div class="container">
+            <div ui-view="">
+                  <div class="row">
+                      <div class="col-xs-12 col-md-6" ng-controller="tenantlistController">
+                      <div class="col-xs-12">
+
+                      <!-- <div class="row"> 
+                       
+                          <div class="col-xs-2 col-md-4 logo" >
+                            <a class="" href="" style=""><img src="/static/img/sbh.png"><div class="" style="height:5%" >{[x.org_name]}</div></a>
+                            </div>
+                            <div class="col-xs-2 col-md-4 logo">
+                            <a class="" href="" style=""><img src="/static/img/sbi.jpg"><div class="" style="height:5%" >{[x.org_name]}</div></a>
+                            </div>
+                            <div class="col-xs-2 col-md-4 logo">
+                            <a class="" href="" style=""><img src="/static/img/pnb.jpg"><div class="" style="height:5%" >{[x.org_name]}</div></a>
+                            </div>
+                            <div class="col-xs-2 col-md-4 logo">
+                            <a class="" href="" style=""><img src="/static/img/canara.jpg"><div class="" style="height:5%" >{[x.org_name]}</div></a>
+                            </div>
+                            <div class="col-xs-2 col-md-4 logo">
+                            <a class="" href="" style=""><img src="/static/img/andhra.jpg"><div class="" style="height:5%" >{[x.org_name]}</div></a>
+                            </div> -->
+                            <!-- </div> -->
+                      </div>
+                      </div>
+                      <div ng-controller="tenantlistController">
+                      
+
+                 <!--  <input type ="text" ng-model="org_name" class = "form-control"placeholder="Enter bank name" >
+                  {[org_name]}
+                  <input  width="100%"type="button" class="btn btn-primary" value="Senarch" ng-click="searchbranchs()" > -->
+                  
+                  </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-7 col-xs-12">
+                          <div class="row" >
+                          <div class="col-md-6" style="margin-top:2%">
+                                <a class="btn btn-info" ui-sref="signup" style="display: block; width: 100%;padding:2%;; ">Bank Login</a>
+
+                          </div>
+
+                          <div class="col-md-6" style="margin-top:2%">
+                              <a class="btn btn-info" ui-sref="signup" style="display: block; width: 100%;padding:2%;;">I want to deliver My Services</a>
+                          </div>
+                          </div>
+                      
+                    </div>
+                    
+                    
+                    <div class="col-md-5 col-xs-12 pull-right "  style="margin-top:2%" ng-controller="userNewController">
+                      
+
+                      <div class="login-box">
+                        
+                        <form id="contactform" ng-submit="createNewuser()"> 
+                            <!-- <p class="contact"><label for="name">Name</label></p>  -->
+                             <h3>{[rr]} Sign me up </h3>
+                            <input id="name" name="name" class="form-control " ng-model="user.full_name" placeholder="First and last name" required="" tabindex="1" type="text"> 
+                             
+                            <!-- <p class="contact "><label for="email">Email</label></p>  -->
+                            <input id="email" class="form-control" name="email" ng-model= "user.email" placeholder="example@domain.com" required="" type="email">
+                            <input id="branch" class="form-control" name="branch" ng-model="user.mobile" placeholder="Mobile Number" required="" type="text">
+                            <!-- <input id="password" class="form-control" name="orgname" placeholder="password" ng-model="user.password"required="" type="password"> -->
+                            <!-- <input id="branch" class="form-control" name="branch" ng-model="user.dpassword" placeholder="password again" required="" type="password"> -->
+                            <br>
+                            
+                            <input class="button btn btn-primary pad" name="submit" id="submit" tabindex="5" value="Sign me up!" type="submit" ng-click="createNewsuer()" >    
+                     </form > 
+                     {[reply]}
+                    </div>
+                      <div class="row">
+                        <div class="col-md-6 col-xs-6">
+                          <a class="btn btn-danger" href="#">AlreadyUser</a>
+                         </div> 
+                          <div class="col-md-6 col-xs-6">
+                          <a class="btn btn-danger" href="#">ForgotPassword</a>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+            </div>
+      </div>
+        <!-- </div> -->
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<div class="col-md-12 col-xs-12" ng-controller="CounterController" >
+       
+            <div class="col-md-8 col-xs-12 text-center">
+                  <ul class="nav nav-pills">
+                        <li role="presentation" class="active"><a href="#">Counter1</a></li>
+                        <li role="presentation"><a href="#">Counter2</a></li>
+                        <li role="presentation"><a href="#">Counter2</a></li>
+            </ul>
+            	<p>Requests:{[count-index]}<p>
+           	<div class="panel panel-default">
+            				<div class="panel-body" ng-model="current">
+            					
+            					
+            					<p ng-bind="current.processed"></p>
+                                          <!-- <p>{[current]}</p> -->
+                                          <p ng-bind="current.processed"></p>
+                                          <p ng-bind="current.full_name"></p>
+                                          <p ng-bind="current.service_name"></p>
+                                          <p ng-bind="current.email"></p>
+                                          
+            					<!-- </tr> -->
+            				<div class="inline">
+            				<button type="button" class="btn btn-success" ng-click="process_complete()">Accept</button>
+            				<button type="button" class="btn btn-danger">Reject</button>
+            				</div>	
+            				</div>
+
+            			</div>
+            </div>
+            	<div class="col-md-4 col-xs-12 text-center">
+
+            	<div class = "" ng-repeat = "x in counter1">
+            		<div>
+            			<div class="panel panel-default">
+            				<div class="panel-body">
+            					<p>{[x.$index]}</p>
+            					<p>{[x.process]}</p>
+            					<p>{[x.full_name]} </p>
+            					<p>{[x.email]}</p>
+            					<p>{[x.service_name]}</p>
+            					<!-- </tr> -->
+            					
+            				</div>
+
+            			</div>
+            	</div>	
+                  
+            	</div>
+            </div>

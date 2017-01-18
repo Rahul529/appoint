@@ -1,0 +1,34 @@
+from django.shortcuts import render
+
+# Create your views here.
+
+from django.http import HttpResponse
+from django.views.generic import View
+def index(request):
+
+	html = '''<html>
+		<head>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>	
+		</head>
+		<body>
+			<nav class="navbar navbar-inverse  navbar-fixed-top">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="#">
+		        <img alt="Brand" src="...">
+ 		     </a>
+    			</div>
+  			</div>
+		</nav>		
+		hello world welcome \
+		to pick appointment<br> \
+		<input type="text"><br>\
+		<input type="text">\
+		 </body> '''
+	return HttpResponse(html)

@@ -1,0 +1,77 @@
+<div class="row"  ng-controller="DatepickerDemoCtrl">
+    
+        
+        <div class="col-md-12 col-xs-12">
+       
+            <div class="col-md-6 col-xs-12 text-center">
+               <!-- <div class="panel panel-primary"> -->
+                        <!-- <div class="panel-heading">Book it now to if you dont wait too long</div> -->
+
+                    <!-- <div class="panel-body"> -->
+
+                 <div ng-controller="DatepickerDemoCtrl"> 
+                 <div>
+                    <h3>hello1</h3>
+                    <p>    {[presentii]}</p>
+                    <p> {[hours1]}</p>
+                    <p>{[endTime]}</p>
+                    <p> {[duration]}</p>
+                    <p>{[counter | formatTimer]}</p>
+                    
+                   <p >{[hours]}:{[minutes]}:{[seconds]} hello1 </p>
+                   <p>{[seconds1]}</p>
+                </div>
+                   
+                <uib-accordion>
+                    <uib-accordion-group is-open="status.open">
+                        <uib-accordion-heading>
+        Selected date is: <em>{[dt | date:'fullDate' ]}</em> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+      </uib-accordion-heading>
+     <div style="display:inline-block; min-height:290px;">
+                  <uib-datepicker ng-model="dt" class="well well-sm" datepicker-options="options"></uib-datepicker>
+                </div>
+
+                <hr />
+    <button type="button" class="btn btn-sm btn-info" ng-click="today()">Today</button>
+    <button type="button" class="btn btn-sm btn-danger" ng-click="clear()">Clear</button>
+    <button type="button" class="btn btn-sm btn-default" ng-click="toggleMin()" uib-tooltip="After today restriction">Min date</button>
+        </uib-accordion-group>
+    </uib-accordion>
+</div> 
+     <uib-accordion>
+       <uib-accordion-group is-open="status.open">
+        <uib-accordion-heading>
+        Fill your details (my details)
+        <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+        </uib-accordion-heading>
+     <div style="">
+        <form>
+            <input type="text" class="form-control" name="username" placeholder="Enter Name">
+                <input type="text" class="form-control" name= "purpose" placeholder="Purpose">
+                <input type="text" class="form-control" name="bankname" placeholder="Bank Name" >
+                <input type="text" class="form-control" name="branch" placeholder="Branch">
+                <input type="text" class="form-control" name="time" placeholder="Time">
+                <input type="text" class="form-control" name="date" placeholder="Date">
+                <input type="text" class="form-control" name="ifsccode" placeholder="IIFSC code">   
+            
+                <select name="ddl" class="form-control" placeholder="Bank Name">
+                    <option value='blue'>IDBI</option>
+                    <option value='blue'>SBI</option>
+                    <option value='blue'>SBH</option>
+                    <option value='blue'>ICICI</option>
+                </select>
+                    <input type="button" class="btn btn-primary form-control" onclick="Submit" value="Boo00ok Now">   
+                </form>
+            
+     </div>
+
+     <hr />
+    </uib-accordion-group>
+    </uib-accordion>        
+
+    
+                </div>
+                </div>
+                
+            </div>
+        </div>

@@ -1,0 +1,35 @@
+<!-- {% extends "base.html" %} -->
+<!-- {% load staticfiles %}
+{% load i18n %}
+{% block content %} -->
+<body ng-app="app1" >
+<div class="panel panel-default" style="margin:auto;margin-right:10%;margin-left:10%;">
+<div class="pane-body" style="margin:1%">
+
+<div class="container row" ng-controller="tenantNewController">
+           
+      <div class="form col-md-6 col-xs-12" align="center"style="align:center">
+    		<form id="contactform" ng-submit="createTenant()"> 
+    			<!-- <p class="contact"><label for="name">Name</label></p>  -->
+    			 <h3>Registration</h3>
+          <input id="name" name="name" class="pad form-control " ng-model="newtenant.tenant_name" placeholder="First and last name" required="" tabindex="1" type="text"> 
+    			 
+    			<!-- <p class="contact "><label for="email">Email</label></p>  -->
+    			<input id="email" class="pad form-control" name="email" ng-model= "newtenant.email" placeholder="example@domain.com" required="" type="email">
+          <input id="orgname" class="pad form-control" name="orgname" placeholder="Domain name" ng-model="newtenant.org_name"required="" type="text">
+          <input id="branch" class="pad form-control" name="branch" ng-model="newtenant.branch_name" placeholder="office branch" required="" type="text">
+          <br>
+          <trh>
+          <input class="button btn btn-primary pad" name="submit" id="submit" tabindex="5" value="Sign me up!" ng-click="createTenant()" type="submit"> 	 
+   </form > 
+   
+  </div>       
+</div>
+</div>
+</div>
+<!-- {% endblock content %} -->
+<!-- {% block extra_javascript %} -->
+<!-- <script src="{{ STATIC_URL }}/static/js/app.js"></script> -->
+<!-- {% endblock extra_javascript %} -->
+
+

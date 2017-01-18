@@ -1,0 +1,26 @@
+<!-- <div class="row">
+<div class="col-md-5 col-xs-12"  style="" ng-controller="">
+ -->                      
+
+    <div class="login-box">
+      
+      <form id="contactform" ng-submit="createNewuser()"> 
+          <!-- <p class="contact"><label for="name">Name</label></p>  -->
+           <h3>Sign me up </h3>
+          <input id="name" name="name" class="form-control " ng-model="user.first_name" placeholder="First name" required="" tabindex="1" type="text"> 
+           <input id="name" name="name" class="form-control " ng-model="user.last_name" placeholder="Last name" required="" tabindex="1" type="text">
+          <!-- <p class="contact "><label for="email">Email</label></p>  -->
+          <input id="email" class="form-control" name="email" ng-model= "user.email" placeholder="example@domain.com" required="" type="email">
+          <input id="password" class="form-control" name="password" ng-model='user.email' placeholder="Type Password">
+          <input id="branch" class="form-control" name="branch" ng-model="user.mobile" placeholder="Mobile Number" required="" type="text">
+          <!-- <input id="password" class="form-control" name="orgname" placeholder="password" ng-model="user.password"required="" type="password"> -->
+          <!-- <input id="branch" class="form-control" name="branch" ng-model="user.dpassword" placeholder="password again" required="" type="password"> -->
+          <br>
+          
+          <input class="button btn btn-primary pad" name="submit" id="submit" tabindex="5" value="Sign me up!" type="submit" ng-click="createNewsuer()" >    
+   </form > 
+
+<!-- </div>     
+</div>
+ -->
+ </div>
