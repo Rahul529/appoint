@@ -31,6 +31,10 @@ userApp.config(function ($stateProvider,$urlRouterProvider,$locationProvider) {
             url:"/newrequest",
             templateUrl: '/static/js/newUserRequest.html',
             controller: 'tenantlistController'
+        }).state('home',{
+          url:"/home",
+          templateUrl:'/static/js/userHome.html',
+          // controller:''
         })
         // .state('newRequest',{
 
@@ -197,6 +201,48 @@ $scope.requests=Bankutils.getRequests($scope.username).then(function(data,status
 // console.log($scope.requests[$scope.index])
 $scope.dada=""
 var saa="1a832c2a-82d5-4197-b595-10386c4d30e8"
+$scope.getRequestData=function(id){
+
+Bankutils.getRequestId($scope.username,id).then(function(data,status){
+  $scope.requestHome=data.request
+  $scope.dada = data.request
+  console.log($scope.requestHome)
+
+$scope.presentii =moment().format(' HH:mm:ss a');
+$scope.startTime=moment($scope.presentii, "HH:mm:ss a");
+// $scope.counter=$scope.seconds1;
+$scope.endtime=$scope.requestHome.timep
+
+$scope.endTime=moment($scope.endtime, "HH:mm:ss a");
+// alert($scope.startTime)
+// alert(document.getElementById("Endtime").innerHTML)
+$scope.duration = moment.duration($scope.endTime.diff($scope.startTime));
+// alert($scope.duration)
+$scope.hours = parseInt($scope.duration.asHours());
+$scope.minutes = parseInt($scope.duration.asMinutes())-$scope.hours*60;
+$scope.seconds = parseInt($scope.duration.asSeconds())-$scope.hours*60*60-$scope.minutes*60;
+
+  $scope.counter = parseInt($scope.duration.asSeconds());
+   $scope.onTimeout = function(){
+        if($scope.counter==0){
+          $scope.stopCounter();
+        }
+        else{
+        $scope.counter--;
+         
+         mytimeout = $timeout($scope.onTimeout,1000);
+       }
+    }
+    var mytimeout = $timeout($scope.onTimeout,1000);
+
+    $scope.stopCounter=function(){
+      $timeout.cancel(mytimeout);
+    }
+});
+
+
+}
+
 Bankutils.getRequestId($scope.username,saa).then(function(data,status){
   $scope.requestHome=data.request
   $scope.dada = data.request

@@ -425,11 +425,14 @@ class UserLogIn(View):
 			# username = serializer.initial_data['username']
 			print "hell"
 			print "%s,%s" %(username,password)
-			user = CustomUser.objects.get(username=username,password=password)
-			print user
-			token = Token.objects.get(user=user)
-			print token
-			return redirect(userDash,user=user.user_id)
+			try:
+				user = CustomUser.objects.get(username=username,password=password)
+				print user
+				token = Token.objects.get(user=user)
+				print token
+				return redirect(userDash,user=user.user_id)
+			except:
+				return render(request,self.template_name,{'form':StaffForm})
 			# return HttpResponse(json.dumps({"token1":token.key}))				
 		return render(request,self.template_name,{'form':StaffForm})
 

@@ -1,0 +1,31 @@
+<div class="col-md-6 col-xs-12" ng-controller="tenantlistController">
+your last Requests
+	<li class="list-group-item" ng-repeat="x  in requests"><a ng-click="getRequestData(x)">{[x]}</a></li>
+	<br><br>
+	<div class = "panel panel-success" ng-model="requestHome">
+   		<div class = "panel-heading">
+      		<h3 class = "panel-title">Request Id :{[requestHome.request_id]}</h3>
+   		</div>
+   
+   <!-- <div class = "panel-body"> -->
+   <div class="panel-body" >
+                      
+                      <p>{[counter |formatTimer]}</p>
+                      <p ng-bind="requestHome.processed"></p>
+                                          <!-- <p>{[current]}</p> -->
+
+                         <p ng-bind="requestHome.processed"></p>
+                                          <p ng-bind="requestHome.full_name"></p>
+                                          <p ng-bind="requestHome.service_name"></p>
+                                          <p ng-bind="requestHome.email"></p>
+                                          <div id="Endtime">{[requestHome.timep]}</div>
+                                          
+                      <!-- </tr> -->
+                    <div class="inline">
+                    <button type="button" class="btn btn-success" ng-click="">Cancel</button>
+                    <!-- <button type="button" class="btn btn-danger">Later</button> -->
+                    </div>  
+    </div>
+     
+   </div>
+</div>

@@ -595,23 +595,26 @@
 			"file": "/home/mbsl/Saas/appoint/views.py",
 			"settings":
 			{
-				"buffer_size": 13921,
+				"buffer_size": 14010,
 				"line_ending": "Unix"
 			}
 		},
 		{
+			"contents": "{% load staticfiles %}\n{% csrf_token %} \n<html>\n		<head>\n    <meta name=\"viewport\" content=\"width=device-width\">\n\n		<!-- <link rel=\"stylesheet\" href=\"http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css\"> -->\n\n		<!-- jQuery library -->\n		<!-- <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js\"></script> -->\n\n		<!-- Latest compiled JavaScript -->\n		<!-- <script src=\"http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js\"></script> -->\n    <script type=\"text/javascript\" src=\"{{STATIC_URL}}/static/js/jquery-1.12.3.js\"></script>\n   <!--  <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.13.1/lodash.min.js.\"></script> -->\n\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"{{STATIC_URL}}/static/css/bootstrap.min.css\"/>\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"{{STATIC_URL}}/static/app.css\"/>\n    <link rel=\"stylesheet\" type=\"text/javascript\" href=\"{{STATIC_URL}}/static/js/angular.js\">\n    <script type=\"text/javascript\" src=\"{{STATIC_URL}}/static/js/bootstrap.min.js\"></script>\n    <link href={{STATIC_URL}}/static/js>\n  		<script type=\"text/javascript\" src=\"{{STATIC_URL}}/static/js/angular.js\"></script>\n		   <script type=\"text/javascript\" src=\"{{STATIC_URL}}/static/js/angular-cookies.js\"></script>\n      <script type=\"text/javascript\" src=\"{{STATIC_URL}}/static/js/angular-ui-router.js\"></script>\n    <script type=\"text/javascript\" src=\"{{STATIC_URL}}/static/js/angular-route.js\"></script>\n    <script type=\"text/javascript\" src=\"{{STATIC_URL}}/static/js/ui-bootstrap-tpls-1.3.2.js\"></script>\n		<script type=\"text/javascript\" src=\"{{STATIC_URL}}/static/js/userapp.js\"></script>\n        <script type=\"text/javascript\" src=\"{{STATIC_URL}}/static/js/moment.js\"></script>\n\n\n    <!-- <script type=\"text/javascript\" src={{STATIC_URL}}/static/js/pages/></script> -->\n\n		</head>\n<nav class=\"navbar navbar-inverse\" style=\"background-color:#2F265F\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>                        \n      </button>\n      <a class=\"navbar-brand\" href=\"#\">Appoint</a>\n    </div>\n    <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n      <ul class=\"nav navbar-nav\">\n        <li class=\"\"><a ui-sref='home'>Home</a></li>\n        <li><a ui-sref=\"signout\">Sign out</a></li>\n        \n\n      </ul>\n      <ul class=\"nav navbar-nav navbar-right\">\n        <!-- <li ><a ui-sref=\"signup\">Sign Up</a></li> -->\n        <!-- <li><a ui-sref=\"usersignup\">Signup</a></li>\n\n        <li><a ui-sref =\"login\" >Login11</a></li> -->\n      <li id = \"username\" class =\"pull-right\" style=\"color:white\">{{user.username}}</li>\n		<li id =\"userEmail\" class=\"pull-right\" >{{user.email}}</li>\n      </ul>\n    </div>\n\n  </div>\n</nav>		\n\n\n\n<body ng-app=\"userApp\" >\n\n<div class=\"container\">\n\n\n<div class=\"row\" ng-controller=\"tenantlistController\">\n<div class=\"row\">\n<div style=\"width:100%;background-color:cyan;\">\n<!-- <div id = \"username\" class =\"pull-right\" >{{user.username}}</div> -->\n<!-- <div id =\"userEmail\" class=\"pull-right\" >{{user.email}}</div> -->\n</div>\n</div>\n<div class=\"row\" style=\"display:inline-flex\">\n<div class=\"col-md-2 col-xs-4 col-lg-4\"><a ui-sref=\"home\">Home</a></div>\n<div class=\"col-md-2 col-xs-4 col-lg-4\"><a ui-sref=\"newRequest\">New</a></div>\n<div class=\"col-md-2 col-xs-4 col-lg-4\"><a>Pending</a></div>\n<div class=\"col-md-2 col-xs-4 col-lg-4\"><a>Completed</a></div>\n<!-- <div class=\"\">{[userEmail]}</div> -->\n</div>\n<div ui-view=\"\">\n<!-- <div class=\"col-md-6 col-xs-12\" >\n	<nav class=\"navbar navbar-fixed\">\n		<ul style=\"display: inline-block;\">\n			\n			\n		</ul>\n	</nav>\n	<h4>Please choose where you want to Go</h4>\n		Choose the bank \n	\n	\n	<p >{[username]}</p>\n  	<li class=\"list-group-item\" >\n  	<button type=\"button\" ng-repeat = \"tenant in tenants\" class=\"list-group-item\" ng-model=\"selectedTenant\" ng-click=\"searchbranchs(tenant.org_name)\">{[tenant.org_name]}</button>\n  	</li>\n -->\n	<!-- <li class=\"list-group-item\" ng-repeat = t in [1,2,3,]>{[tenan t.org_name]}</li> -->\n 	\n	\n	<!-- Please Choose the Branch -->\n	<!-- <ul class=\"list-group\"> -->\n<!--   	<li class=\"list-group-item\">\n  	<button type=\"button\" ng-repeat = \"branch in branches\" class=\"list-group-item\" ng-model=\"selectedbranch\" ng-click=\"searchServices(branch)\">{[branch]}</button>\n  	</li>\n\n  	Please choose The services\n  	<li class=\"list-group-item\" > -->\n  	<!-- <select ng-repeat = \"service in services_list\" class=\"list-group-item\" ng-model=\"selectedService\" ng-click=\"\">{[service]}</select> -->\n  	<!-- <select class=\"form-control input-area\" ng-model=\"selectedService\" ng-options=\"service for service in services_list\"></select> -->\n  	<!-- </li> -->\n	<!-- <li class=\"list-group-item\" ng-repeat = t in [1,2,3,]>{[tenan t.org_name]}</li> -->\n 	\n	<!-- </ul> -->\n	<!-- <ul class=\"list-group\"> -->\n  	\n  		<!-- <button class=\"btn btn-primary\" style=\"width: 100%\" ng-click=\"bookSlot(selectedService)\">Create</button> -->\n  	\n\n	<!-- <li class=\"list-group-item\" ng-repeat = t in [1,2,3,]>{[tenan t.org_name]}</li> -->\n 	\n	<!-- </ul> -->\n<!-- </div> -->\n<div class=\"col-md-6 col-xs-12\" ng-controller=\"tenantlistController\">\nyour last Requests\n	<li class=\"list-group-item\" ng-repeat=\"x  in requests\"><a href=\"\" ng-click=\"getRequestData(x)\">{[x]}</a></li>\n	<br><br>\n	<div class = \"panel panel-success\" ng-model=\"requestHome\">\n   		<div class = \"panel-heading\">\n      		<h3 class = \"panel-title\">Request Id :{[requestHome.request_id]}</h3>\n   		</div>\n   \n   <!-- <div class = \"panel-body\"> -->\n   <div class=\"panel-body\" >\n                      \n                      <p>{[counter |formatTimer]}</p>\n                      <p ng-bind=\"requestHome.processed\"></p>\n                                          <!-- <p>{[current]}</p> -->\n\n                         <p ng-bind=\"requestHome.processed\"></p>\n                                          <p ng-bind=\"requestHome.full_name\"></p>\n                                          <p ng-bind=\"requestHome.service_name\"></p>\n                                          <p ng-bind=\"requestHome.email\"></p>\n                                          <div id=\"Endtime\">{[requestHome.timep]}</div>\n                                          \n                      <!-- </tr> -->\n                    <div class=\"inline\">\n                    <button type=\"button\" class=\"btn btn-success\" ng-click=\"\">Cancel</button>\n                    <!-- <button type=\"button\" class=\"btn btn-danger\">Later</button> -->\n                    </div>  \n    </div>\n     \n   </div>\n</div>\n<!-- <div ng-include=\"'/static/js/userHome.html'\"></div> -->\n\n</div>	\n</div>\n</div>\n</div>\n</body>",
 			"file": "/home/mbsl/Saas/static/js/userDashboard.html",
+			"file_size": 6801,
+			"file_write_time": 131317001915287946,
 			"settings":
 			{
-				"buffer_size": 6688,
+				"buffer_size": 6809,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/mbsl/Saas/static/js/newUserRequest.html",
+			"file": "/home/mbsl/Saas/Saas/wsgi.py",
 			"settings":
 			{
-				"buffer_size": 1567,
+				"buffer_size": 956,
 				"line_ending": "Unix"
 			}
 		},
@@ -619,7 +622,15 @@
 			"file": "/home/mbsl/Saas/static/js/userapp.js",
 			"settings":
 			{
-				"buffer_size": 8432,
+				"buffer_size": 10016,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/mbsl/Saas/static/js/userHome.html",
+			"settings":
+			{
+				"buffer_size": 1433,
 				"line_ending": "Unix"
 			}
 		},
@@ -673,10 +684,12 @@
 	"expanded_folders":
 	[
 		"/home/mbsl/Saas",
+		"/home/mbsl/Saas/Saas",
 		"/home/mbsl/Saas/static"
 	],
 	"file_history":
 	[
+		"/home/mbsl/Saas/static/js/newUserRequest.html",
 		"/home/mbsl/Saas/static/js/employeeDashboard .html",
 		"/home/mbsl/Saas/static/js/bankemployees_add.html",
 		"/home/mbsl/Saas/static/js/employeeLogin.html",
@@ -809,7 +822,7 @@
 						"translation.y": 95.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
@@ -825,8 +838,8 @@
 						"selection":
 						[
 							[
-								1971,
-								1971
+								881,
+								881
 							]
 						],
 						"settings":
@@ -834,11 +847,11 @@
 							"syntax": "Packages/Python/Python.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 172.0,
-						"translation.y": 342.0,
+						"translation.x": 0.0,
+						"translation.y": 57.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
@@ -867,7 +880,7 @@
 						"translation.y": 4104.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -893,11 +906,11 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": -0.0,
+						"translation.x": 0.0,
 						"translation.y": 1083.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -953,7 +966,7 @@
 						"translation.y": 4446.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -982,7 +995,7 @@
 						"translation.y": 1425.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -1007,10 +1020,10 @@
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 641.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
@@ -1048,15 +1061,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13921,
+						"buffer_size": 14010,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								869,
-								869
+								13375,
+								13375
 							]
 						],
 						"settings":
@@ -1065,10 +1078,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3135.0,
+						"translation.y": 7814.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -1077,15 +1090,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6688,
+						"buffer_size": 6809,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6284,
-								6284
+								5425,
+								5425
 							]
 						],
 						"settings":
@@ -1093,38 +1106,38 @@
 							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2451.0,
+						"translation.y": 436.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 11,
-					"file": "/home/mbsl/Saas/static/js/newUserRequest.html",
+					"file": "/home/mbsl/Saas/Saas/wsgi.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1567,
+						"buffer_size": 956,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								158,
-								158
+								955,
+								955
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
+							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
-						"translation.x": 0.0,
-						"translation.y": 190.0,
+						"translation.x": -0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
@@ -1133,15 +1146,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8432,
+						"buffer_size": 10016,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6140,
-								6140
+								380,
+								380
 							]
 						],
 						"settings":
@@ -1151,7 +1164,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1705.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1159,6 +1172,36 @@
 				},
 				{
 					"buffer": 13,
+					"file": "/home/mbsl/Saas/static/js/userHome.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1433,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								186,
+								186
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
 					"file": "/home/mbsl/Saas/static/js/app.js",
 					"semi_transient": false,
 					"settings":
@@ -1188,7 +1231,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 14,
+					"buffer": 15,
 					"file": "/home/mbsl/Saas/static/js/login_html.html",
 					"semi_transient": false,
 					"settings":
@@ -1214,7 +1257,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 14,
 					"type": "text"
 				}
 			]
